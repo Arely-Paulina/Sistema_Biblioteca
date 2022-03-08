@@ -68,7 +68,7 @@ switch ($_GET["op"]){
  			$data[]=array(
  				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-edit"></i></button>'.
  					' <button class="btn btn-danger" onclick="desactivar('.$reg->idlibro.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idlibro.')"><i class="fa fa-pencil"></i></button>'.
+ 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-pencil"></i></button>'.
  					' <button class="btn btn-primary" onclick="activar('.$reg->idlibro.')"><i class="fa fa-check"></i></button>',
  				"1"=>$reg->titulo,
  				"2"=>$reg->cantidad_disponible,
