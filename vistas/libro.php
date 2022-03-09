@@ -11,6 +11,7 @@ if (!isset($_SESSION["nombre"]))
 else
 {
 require 'header.php';
+}
 
 ?>
 <!--Contenido00-->
@@ -125,3 +126,11 @@ ob_end_flush();
 <script type="text/javascript">
   $('#siLibros').addClass("active");
 </script>
+
+<script>
+  let libros = 0; //Igualar a el valor del campo de disponibles
+  if (libros == 0){
+    //Bloquear el botón de prestar libro
+  }
+</script>      
+       
