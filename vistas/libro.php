@@ -125,12 +125,11 @@ ob_end_flush();
 ?>
 <script type="text/javascript">
   $('#siLibros').addClass("active");
-</script>
-
-<script>
-  let libros = 0; //Igualar a el valor del campo de disponibles
-  if (libros == 0){
-    //Bloquear el botón de prestar libro
+  $(document).ready(function bloquear_prestamo(){
+    $let libros = document.getElementById(cantidad_disponible).value; //Igualar a el valor del campo de disponibles
+    if ($libros == 0){
+      $document.getElementById(btn_prestamo).disabled; //Bloquea el botón
+    }
   }
-</script>      
-       
+</script>
+    
