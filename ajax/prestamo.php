@@ -74,7 +74,7 @@ switch ($_GET["op"]){
 	case "SelectLibro":
         require_once "../modelos/Libro.php";
         $libro = new Libro();
-        $rspta = desactivar($libro); //Este método bloquea los libros que tienen 0 registros
+        $rspta = $libro->select();
         while ($reg = $rspta->fetch_object())
         {
                 echo '<option value=' . $reg->idlibro . '>' . $reg->titulo . '</option>';
