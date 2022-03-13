@@ -13,13 +13,21 @@ $cantidad=isset($_POST["cantidad"])? limpiarCadena($_POST["cantidad"]):"";
 $observacion=isset($_POST["observacion"])? limpiarCadena($_POST["observacion"]):"";
 switch ($_GET["op"]){
 	case 'guardaryeditar':
-		if (empty($idprestamo)){
-			$rspta=$prestamo->insertar($idlibro,$idestudiante,$fecha_prestamo,$fecha_devolucion,$cantidad,$observacion);
-			echo $rspta ? "Prestamo registrado" : "Prestamo no se pudo registrar";
-		}
-		else {
-			$rspta=$prestamo->editar($idprestamo,$idlibro,$idestudiante,$fecha_prestamo,$fecha_devolucion,$cantidad,$observacion);
-			echo $rspta ? "Prestamo actualizado" : "Prestamo no se pudo actualizar";
+		require_once "../modelos/Libro.php";
+		$book = new Libro();
+        $cantidadDisponible = $book->obtenerCantidad($idlibro);
+		$reg=$cantidadDisponible->fetch_object();
+		if($cantidad<=$reg->cantidad_disponible && $cantidad>0){
+			if (empty($idprestamo)){
+				$rspta=$prestamo->insertar($idlibro,$idestudiante,$fecha_prestamo,$fecha_devolucion,$cantidad,$observacion);
+				echo $rspta ? "Prestamo registrado" : "Prestamo no se pudo registrar";
+			}
+			else {
+				$rspta=$prestamo->editar($idprestamo,$idlibro,$idestudiante,$fecha_prestamo,$fecha_devolucion,$cantidad,$observacion);
+				echo $rspta ? "Prestamo actualizado": "Prestamo no se pudo actualizar";
+			}
+		}else{
+			echo "La cantidad de libros a prestar es invalida";
 		}
 	break;
 
