@@ -24,8 +24,14 @@ Class Prestamo
 		$sql="SELECT p.idprestamo,p.idlibro,l.titulo as libro,p.idestudiante,e.nombre as estudiante, DATE(p.fecha_prestamo) as fecha_prestamo,DATE(p.fecha_devolucion) as fecha_devolucion,p.cantidad,p.observacion,p.condicion FROM prestamo p INNER JOIN libro l ON p.idlibro=l.idlibro INNER JOIN estudiante e ON p.idestudiante=e.idestudiante ORDER BY p.idprestamo desc";
 		return ejecutarConsulta($sql);		
 	}
-
-
+	
+	//Implentamos un método para editar registros
+	public function editar($idprestamo,$idlibro, $idestudiante, $fecha_prestamo, $fecha_devolucion, $cantidad, $observacion)
+	{
+		$sql="UPDATE prestamo SET idlibro='$idlibro', idestudiante='$idestudiante', fecha_prestamo='$fecha_prestamo', fecha_devolucion='$fecha_devolucion', cantidad='$cantidad' WHERE idprestamo='$idprestamo'";
+		return ejecutarConsulta($sql);
+	}
+	
 	public function mostrar($idprestamo)
 	{
 		$sql="SELECT * FROM prestamo WHERE idprestamo='$idprestamo'";
