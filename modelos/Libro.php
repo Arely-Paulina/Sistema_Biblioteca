@@ -55,9 +55,15 @@ Class Libro
 
 	public function select()
         {
-         $sql="SELECT * FROM libro WHERE condicion='1'";
+         $sql="SELECT * FROM libro WHERE condicion='1' AND cantidad_disponible>='1'";
          return ejecutarConsulta($sql);
         }
+	
+	public function obtenerCantidad($idlibro)
+	{
+		$sql="SELECT cantidad_disponible FROM libro WHERE idlibro='$idlibro'";
+		return ejecutarConsulta($sql);
+	}
 
 }
 
