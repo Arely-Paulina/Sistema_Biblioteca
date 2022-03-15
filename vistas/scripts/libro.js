@@ -128,6 +128,7 @@ function guardaryeditar(e)
 	    {                    
 	          bootbox.alert(datos);	          
 	          mostrarform(false);
+		  tabla.ajax.reload();
 	    }
 
 	});
