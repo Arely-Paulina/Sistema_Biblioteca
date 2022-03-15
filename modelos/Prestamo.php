@@ -28,7 +28,7 @@ Class Prestamo
 	//Implentamos un método para editar registros
 	public function editar($idprestamo,$idlibro, $idestudiante, $fecha_prestamo, $fecha_devolucion, $cantidad, $observacion)
 	{
-		$sql="UPDATE prestamo SET idlibro='$idlibro', idestudiante='$idestudiante', fecha_prestamo='$fecha_prestamo', fecha_devolucion='$fecha_devolucion', cantidad='$cantidad' WHERE idprestamo='$idprestamo'";
+		$sql="UPDATE prestamo SET idlibro='$idlibro', idestudiante='$idestudiante', fecha_prestamo='$fecha_prestamo', fecha_devolucion='$fecha_devolucion', cantidad='$cantidad, observacion='$observacion' WHERE idprestamo='$idprestamo'";
 		return ejecutarConsulta($sql);
 	}
 	
