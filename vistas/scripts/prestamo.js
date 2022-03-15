@@ -57,7 +57,7 @@ function mostrarform(flag)
 	{
 		$("#listadoregistros").hide();
 		$("#formularioregistros").show();
-		$("#btnGuardar").show();
+		$("#btnGuardar").prop("disabled",false);
 		$("#btnCancelar").show();
 	}
 	else
@@ -119,7 +119,7 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	//$("#btnGuardar").prop("disabled",true);
+	$("#btnGuardar").prop("disabled",true);
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
@@ -159,7 +159,7 @@ function mostrar(idprestamo)
  		$("#idprestamo").val(data.idprestamo);
 
  			//Ocultar y mostrar los botones
- 		$("#btnGuardar").hide();
+ 		$("#btnGuardar").show();
 		$("#btnCancelar").show();
 		$("#btnagregar").hide();
 
