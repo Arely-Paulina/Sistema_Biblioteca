@@ -120,7 +120,6 @@ require 'footer.php';
 ?>
 <script type="text/javascript" src="scripts/libro.js"></script>
 <?php 
-}
 ob_end_flush();
 ?>
 <script type="text/javascript">
