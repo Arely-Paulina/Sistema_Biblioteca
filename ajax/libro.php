@@ -66,9 +66,9 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-edit"></i></button>'.
- 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idlibro.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-edit"></i></button>'.
+ 				"0"=>($reg->condicion)?'<button class="btn btn-info" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-edit"></i></button>'.
+ 					' <button class="btn btn-primary" onclick="desactivar('.$reg->idlibro.')"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-info" onclick="mostrar('.$reg->idlibro.')"><i class="fas fa-edit"></i></button>'.
  					' <button class="btn btn-primary" onclick="activar('.$reg->idlibro.')"><i class="fa fa-check"></i></button>',
  				"1"=>$reg->titulo,
  				"2"=>$reg->cantidad_disponible,
@@ -81,7 +81,7 @@ switch ($_GET["op"]){
  				"9"=>$reg->peso,
  				"10"=>$reg->descripcion,
  				"11"=>"<img src='../files/libros/".$reg->imagen."' height='50px' width='50px' >",
- 				"12"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+ 				"12"=>($reg->condicion)?'<span class="label bg-blue">Activado</span>':
  				'<span class="label bg-red">Desactivado</span>'
  				);
  		}
