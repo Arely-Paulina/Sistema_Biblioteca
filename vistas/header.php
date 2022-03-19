@@ -129,7 +129,7 @@
              <li id="siAcercade">
               <a href="acercade.php">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
+                <small class="label pull-right bg-black">IT</small>
               </a>
             </li>   
           </ul>
