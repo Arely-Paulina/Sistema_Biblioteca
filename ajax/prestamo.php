@@ -49,16 +49,16 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>($reg->condicion=='Prestado')?'<button class="btn btn-warning" onclick="mostrar('.$reg->idprestamo.')"><i class="fa fa-eye"></i></button>'.
- 					' <button class="btn btn-danger" onclick="anular('.$reg->idprestamo.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idprestamo.')"><i class="fa fa-eye"></i></button>',
+ 				"0"=>($reg->condicion=='Prestado')?'<button class="btn btn-info" onclick="mostrar('.$reg->idprestamo.')"><i class="fas fa-edit"></i></button>'.
+ 					' <button class="btn btn-primary" onclick="anular('.$reg->idprestamo.')"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-info" onclick="mostrar('.$reg->idprestamo.')"><i class="fas fa-edit"></i></button>',
  				"1"=>$reg->libro,
  				"2"=>$reg->estudiante,
  				"3"=>$reg->fecha_prestamo,
  				"4"=>$reg->fecha_devolucion,
  				"5"=>$reg->cantidad,
  				"6"=>$reg->observacion,
- 				"7"=>($reg->condicion=='Prestado')?'<span class="label bg-green">Prestado</span>':
+ 				"7"=>($reg->condicion=='Prestado')?'<span class="label bg-blue">Prestado</span>':
  				'<span class="label bg-red">Devuelto</span>'
  				);
  		}
