@@ -56,12 +56,26 @@ function listar()
 		"aProcessing": true,//Activamos el procesamiento del datatables
 	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
 	    dom: '<Bl<f>rtip>',//Definimos los elementos del control de tabla
-	    buttons: [		          
-		            'copyHtml5',
-		            'excelHtml5',
-		            'csvHtml5',
-		            'pdf'
-		        ],
+	    buttons: [
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [ 1, 2, 3]
+                }
+            },
+            {
+                extend: 'csvHtml5',
+                exportOptions: {
+                    columns:  [ 1, 2, 3]
+                }
+            },
+            {
+                extend: 'pdf',
+                exportOptions: {
+                    columns: [ 1, 2, 3]
+                }
+            },
+        ],
 		"ajax":
 				{
 					url: '../ajax/editorial.php?op=listar',
@@ -72,14 +86,7 @@ function listar()
 					}
 				},
 		"language": {
-            "lengthMenu": "Mostrar : _MENU_ registros",
-            "buttons": {
-            "copyTitle": "Tabla Copiada",
-            "copySuccess": {
-                    _: '%d líneas copiadas',
-                    1: '1 línea copiada'
-                }
-            }
+            "lengthMenu": "Mostrar : _MENU_ registros"
         },
 		"bDestroy": true,
 		"iDisplayLength": 5,//Paginación
