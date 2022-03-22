@@ -1,6 +1,6 @@
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version mediaTerminada</b> 
+          <b>Versión Media Terminada</b> 
         </div>
         <strong>Sistema Bibliotecario.</strong>
     </footer>    
