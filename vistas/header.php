@@ -85,7 +85,7 @@
              <li id="siEscritorio" >
               <a href="prestamo.php">
               <i class="fas fa-book"></i>
-                 <span>Prestamos/Devoluciones</span>
+                 <span>Préstamos/Devoluciones</span>
               </a>
             </li>
             <li>
