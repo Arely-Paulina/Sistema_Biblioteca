@@ -33,7 +33,7 @@ require 'header.php';
                             <th>Opciones</th>
                             <th>Libro</th>
                             <th>Estudiante</th>
-                            <th>Fecha Prestamo</th>
+                            <th>Fecha Préstamo</th>
                             <th>Fecha Devolución</th>
                             <th>Cantidad</th>
                             <th>Observación</th>
@@ -56,7 +56,7 @@ require 'header.php';
                           <select id="idestudiante" name="idestudiante" class="form-control selectpicker" data-live-search="true" required></select>
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                          <label>Fecha Prestamo:</label>
+                          <label>Fecha Préstamo:</label>
                           <input type="date" name="fecha_prestamo" id="fecha_prestamo" class="form-control" placeholder="Fecha Prestamo" required>
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
